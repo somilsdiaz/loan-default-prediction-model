@@ -4,6 +4,12 @@
 
 In banking and financial services, the ability to predict whether a potential customer may default on a loan is crucial for minimizing risks. This project focuses on predicting the likelihood of loan defaults based on various customer attributes, such as income, credit amount, family status, and more. The objective is to help financial institutions make more informed, data-driven decisions when granting credit, reducing the risk associated with defaults, and optimizing credit allocation.
 
+1. **[Project website](https://darwincharris.github.io/ProjectSelection-DM202430/index.html)**: A detailed overview of the project selection process, which provided valuable context for defining the scope of the analysis.
+   
+2. **[Data Visualizations on Looker Studio](https://lookerstudio.google.com/reporting/3a5fadf5-0bf8-4370-a2a1-0b9add124378)**: Interactive visualizations that helped in the analysis and interpretation of key metrics, including loan default predictions and customer demographics.
+
+3. **[Loan Defaulter Dataset on Kaggle](https://www.kaggle.com/datasets/gauravduttakiit/loan-defaulter?select=columns_description.csv)**: The source dataset used for this project. It contains detailed information about customers' financial attributes and loan performance.
+
 ## Problem Statement
 
 Financial institutions face substantial risks in extending credit, as defaults can lead to significant losses and instability in the financial ecosystem. This project aims to build a machine learning model to predict the likelihood of a loan default. By analyzing customer behavior, this model assists in improving operational efficiency, ensuring quicker and more accurate credit approvals, and ultimately supporting better risk management strategies.
@@ -39,15 +45,27 @@ The **Loan Defaulter** dataset consists of various customer attributes, which ar
 #### Exogenous Data
 External economic factors, such as interest rates, unemployment rates, and inflation, were incorporated into the analysis to provide broader economic context to the predictions. These factors can have a significant impact on repayment behavior.
 
-## Data Visualization
+## Data Visualization  
 
-Key visualizations provide insight into the dataset's characteristics:
+Key visualizations provide insight into the dataset's characteristics:  
 
-- **Class Imbalance**: The dataset is heavily imbalanced, with 91.9% of clients having no payment difficulties (TARGET = 0) and only 8.1% facing defaults (TARGET = 1).
-- **Gender Distribution**: The dataset shows a slight imbalance in gender, with more male data points.
-- **Car Ownership and Real Estate Ownership**: These features show a correlation between asset ownership and default risk.
-- **Children Distribution**: Having more children increases the likelihood of payment difficulties.
-- **Credit Amount and Loan Annuity**: These are crucial features influencing the default prediction.
+- **Class Imbalance**: The dataset is significantly imbalanced, with 91.9% of clients having no payment difficulties (TARGET = 0) and only 8.1% facing defaults (TARGET = 1). This imbalance may lead to a classification model biased toward the majority class. Techniques such as oversampling, undersampling, or using performance metrics like F1-score and ROC AUC are recommended for more reliable model evaluation.  
+
+- **Gender Distribution**: The dataset includes 200,000 clients: 68,500 are men, and 131,500 are women. Of those facing payment difficulties, 7% are women, and 5.3% are men. While more women are represented overall, the higher proportion of loans requested by women may influence these figures. Gender distribution analysis is critical for understanding how it might impact predictions.  
+
+- **Age Distribution**:  
+  - The age groups 31–40 and 41–50 account for the highest proportion of people with payment difficulties, comprising 51.51% of all defaults.  
+  - Younger clients (20–30) also show a notable number of payment difficulties (~3,000 individuals), suggesting risk factors aren't confined to older demographics.  
+  - Older age groups (51–60 and 61–70) have fewer payment difficulties (around 2,500 and 1,000 individuals, respectively), potentially due to greater income stability or better financial management.  
+  - These trends suggest economic responsibilities, such as raising children or paying mortgages, may increase risk for individuals aged 31–50.  
+
+- **Ownership of Assets (Vehicle and Housing)**: While asset ownership influences credit application likelihood, it does not show a significant correlation with delinquency risk. Notably, a considerable proportion of clients with payment difficulties still own vehicles or houses, indicating other factors may play a more critical role in default risk analysis.  
+
+- **Marital Status and Number of Children**: Married clients and those without children tend to apply for more credit, but these factors are not strongly associated with increased delinquency risk.  
+
+- **Educational Level**: The majority of payment difficulties are concentrated among clients with a secondary education level, making this a relevant variable for risk analysis.  
+
+- **Loan Characteristics**: Loan amounts and annuity values significantly influence default predictions. Proper feature scaling and correlation analysis are vital for accurate modeling.  
 
 ## Machine Learning Model
 
@@ -61,15 +79,3 @@ The model's performance was evaluated using metrics such as accuracy, precision,
 
 ### Confusion Matrix:
 The confusion matrix before and after applying class balancing techniques shows a marked improvement in the model's ability to predict defaults.
-
-## External Resources
-
-To enrich the analysis and modeling process, the following resources were consulted:
-
-1. **[Project website](https://darwincharris.github.io/ProjectSelection-DM202430/index.html)**: A detailed overview of the project selection process, which provided valuable context for defining the scope of the analysis.
-   
-2. **[Data Visualizations on Looker Studio](https://lookerstudio.google.com/reporting/3a5fadf5-0bf8-4370-a2a1-0b9add124378)**: Interactive visualizations that helped in the analysis and interpretation of key metrics, including loan default predictions and customer demographics.
-
-3. **[Loan Defaulter Dataset on Kaggle](https://www.kaggle.com/datasets/gauravduttakiit/loan-defaulter?select=columns_description.csv)**: The source dataset used for this project. It contains detailed information about customers' financial attributes and loan performance.
-
-These resources contributed significantly to the data exploration and model development phases of the project, offering deeper insights into the challenges faced by financial institutions when managing loan risks.
