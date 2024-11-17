@@ -1,0 +1,13 @@
+
+    Directory: C:\Users\Somils\Pictures\loan-default-prediction-model\data\img
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---        17/11/2024 1:27 p. m.          10203 family_status_payment_difficulty.PNG
+-a---        17/11/2024 1:33 p. m.              0 lista.txt
+-a---        17/11/2024 1:25 p. m.           8101 number_children_payment_difficult.PNG
+-a---        17/11/2024 1:23 p. m.           6697 payment_difficulty_groupAge_gender.PNG
+-a---        17/11/2024 1:23 p. m.           6082 payment_difficulty_groupAge.PNG
+-a---        17/11/2024 1:21 p. m.          10047 payment_difficulty.PNG
+-a---        17/11/2024 1:22 p. m.          10826 total_customer_gender.png
+
