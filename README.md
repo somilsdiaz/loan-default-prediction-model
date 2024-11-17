@@ -39,7 +39,8 @@ The **Loan Defaulter** dataset consists of various customer attributes, which ar
 ### Data Quality Insights
 
 #### Data Cleaning
-- **Missing Values**: Some columns, such as `AMT_ANNUITY` and `AMT_GOODS_PRICE`, contained missing values, which were handled by removing rows with missing data.
+- **Missing Values**: Some columns, such as `AMT_ANNUITY` and `AMT_GOODS_PRICE`, contained missing values. Since the number of records with missing data was minimal, it was decided to remove these rows. This approach ensured that the dataset remained clean without introducing any significant risk of bias or loss of critical information.
+
 - **Outliers**: Extreme values, such as unusually high credit amounts and employment days, were identified and analyzed. Some of these outliers were found to be valid, reflecting specific customer characteristics (e.g., unemployed or self-employed individuals).
   
 #### Exogenous Data
@@ -49,7 +50,7 @@ External economic factors, such as interest rates, unemployment rates, and infla
 
 Key visualizations provide insight into the dataset's characteristics:  
 
-- **Class Imbalance**: The dataset is significantly imbalanced, with 91.9% of clients having no payment difficulties (TARGET = 0) and only 8.1% facing defaults (TARGET = 1). This imbalance may lead to a classification model biased toward the majority class. Techniques such as oversampling, undersampling, or using performance metrics like F1-score and ROC AUC are recommended for more reliable model evaluation.  
+- **Class Imbalance**: The dataset is significantly imbalanced, with 91.9% of clients having no payment difficulties (TARGET = 0) and only 8.1% facing defaults (TARGET = 1). 
 
 - **Gender Distribution**: The dataset includes 200,000 clients: 68,500 are men, and 131,500 are women. Of those facing payment difficulties, 7% are women, and 5.3% are men. While more women are represented overall, the higher proportion of loans requested by women may influence these figures. Gender distribution analysis is critical for understanding how it might impact predictions.  
 
@@ -64,8 +65,6 @@ Key visualizations provide insight into the dataset's characteristics:
 - **Marital Status and Number of Children**: Married clients and those without children tend to apply for more credit, but these factors are not strongly associated with increased delinquency risk.  
 
 - **Educational Level**: The majority of payment difficulties are concentrated among clients with a secondary education level, making this a relevant variable for risk analysis.  
-
-- **Loan Characteristics**: Loan amounts and annuity values significantly influence default predictions. Proper feature scaling and correlation analysis are vital for accurate modeling.  
 
 ## Machine Learning Model
 
